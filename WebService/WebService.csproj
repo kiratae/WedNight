@@ -1,9 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>1a0ef8a0-3903-47aa-a320-586046e97aa0</UserSecretsId>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>BearHunt.WedNight.WebService</AssemblyName>
+    <RootNamespace>BearHunt.WedNight.WebService</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

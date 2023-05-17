@@ -31,7 +31,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapGet("/", () => movieApiKey);
+app.MapGet("/", () => "Hello world!");
 
 app.MapControllers();
 

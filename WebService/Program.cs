@@ -9,7 +9,6 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-var movieApiKey = builder.Configuration["Movies:ServiceApiKey"];
 
 builder.Services.Configure<EntityConfigSection>(builder.Configuration.GetSection("EntityConfigSection"));
 

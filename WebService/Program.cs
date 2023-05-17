@@ -1,3 +1,6 @@
+using BearHunt.WedNight.Entity;
+using BearHunt.WedNight.Model;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -7,6 +10,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var movieApiKey = builder.Configuration["Movies:ServiceApiKey"];
+
+builder.Services.Configure<EntityConfigSection>(builder.Configuration.GetSection("EntityConfigSection"));
+
+// Service
+builder.Services.AddScoped<IUserService, UserService>();
+
+// Repository
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 var app = builder.Build();
 

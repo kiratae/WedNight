@@ -1,6 +1,7 @@
+using BearHunt.WedNight.Model;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebService.Controllers
+namespace BearHunt.WedNight.WebService.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -12,15 +13,18 @@ namespace WebService.Controllers
     };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly IUserService _service;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IUserService service)
         {
             _logger = logger;
+            _service = service;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
+            _service.GetListAsync(new UserFilter(), null);
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),

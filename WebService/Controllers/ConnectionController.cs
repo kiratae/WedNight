@@ -1,5 +1,4 @@
 ﻿using BearHunt.WedNight.WebService.Controllers;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BearHunt.WedNight.WebService
